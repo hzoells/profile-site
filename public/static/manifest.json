@@ -1,0 +1,20 @@
+{
+  "short_name": "Hugo Zoells",
+  "name": "Hugo Zoells - Personal Profile Site",
+  "background_color": "#07679f",
+  "theme_color": "#07679f",
+  "display": "standalone",
+  "start_url": "./",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/static/favicons/favicon-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "256x256",
+      "src": "/static/favicons/favicon-256x256.png",
+      "type": "image/png"
+    }
+  ]
+}
