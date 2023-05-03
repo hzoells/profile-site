@@ -1,20 +1,12 @@
 import styled from 'styled-components'
 
-import {HEADER_HEIGHT} from 'modules/core/constants'
+import {SnapScrollContainer, SnapScrollSection, Text} from 'modules/common/components'
+import {About} from './components'
 
-import {Text} from 'modules/common/components'
+export const StyledRoot = styled(SnapScrollContainer)``
 
-export const StyledRoot = styled.div`
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-
-  height: calc(100vh - ${HEADER_HEIGHT});
-`
-
-export const StyledSection = styled.div`
-  scroll-snap-align: start;
-
-  height: calc(100vh - ${HEADER_HEIGHT});
-`
+export const StyledSection = styled(SnapScrollSection)``
 
 export const StyledText = styled(Text)``
+
+export const StyledAbout = styled(About)``

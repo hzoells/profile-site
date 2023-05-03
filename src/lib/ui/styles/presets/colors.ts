@@ -28,6 +28,9 @@ const [homeBlue5, homeBlue5RGB] = createColor('#032940')
 const [homeBlue6, homeBlue6RGB] = createColor('#021f30')
 const [homeBlueLight, homeBlueLightRGB] = createColor('#6aa4c5')
 
+// Accent Blue
+const [accentBlue, accentBlueRGB] = createColor('#3e7fff')
+
 // Warm White
 const [warmWhite, warmWhiteRGB] = createColor('#fefbf6')
 const [warmWhite1, warmWhite1RGB] = createColor('#f7dcab')
@@ -161,6 +164,8 @@ export const hexColors = {
   homeBlue6,
   homeBlueLight,
 
+  accentBlue,
+
   warmWhite,
   warmWhite1,
   warmWhite2,
@@ -278,6 +283,8 @@ export const rgbColors = {
   homeBlue5RGB,
   homeBlue6RGB,
   homeBlueLightRGB,
+
+  accentBlueRGB,
 
   warmWhiteRGB,
   warmWhite1RGB,
