@@ -33,11 +33,12 @@ export interface StyledHeaderButtonsContainerProps {
 }
 
 const getHeaderButtonsContainerColumns = ({buttonCount}: StyledHeaderButtonsContainerProps) =>
-  new Array<string>(buttonCount).fill(' auto').reduce((prev, curr) => curr.concat(prev), '')
+  new Array<string>(buttonCount).fill(' 300px').reduce((prev, curr) => curr.concat(prev), '')
 
 export const StyledHeaderButtonsContainer = styled.div<StyledHeaderButtonsContainerProps>`
   display: grid;
   grid-template-columns: ${getHeaderButtonsContainerColumns};
+  justify-content: center;
 
   width: 100%;
   height: 100%;

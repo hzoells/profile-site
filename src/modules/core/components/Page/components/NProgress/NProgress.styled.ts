@@ -13,7 +13,7 @@ export const NProgressStyles = createGlobalStyle`
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: ${colors.steelPink1};
+      background-color: ${colors.homeBlue1};
     }
 
     // Fancy blur effect
@@ -24,7 +24,7 @@ export const NProgressStyles = createGlobalStyle`
       display: block;
       width: 100px;
       height: 100%;
-      box-shadow: 0 0 10px ${colors.steelPink1}, 0 0 5px ${colors.steelPink1};
+      box-shadow: 0 0 10px ${colors.homeBlue1}, 0 0 5px ${colors.homeBlue1};
       opacity: 1;
     }
   }

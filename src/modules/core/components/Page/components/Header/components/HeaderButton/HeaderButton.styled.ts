@@ -7,10 +7,14 @@ export interface StyledHeaderButtonProps {
   isCurrentPage: boolean
 }
 
-const getHeaderButtonBackgroundColor = ({isCurrentPage}: StyledHeaderButtonProps) =>
+const getHeaderButtonBorder = ({isCurrentPage}: StyledHeaderButtonProps) =>
   isCurrentPage
-    ? css`rgba(${colors.homeBlueLightRGB}, 0.2)`
-    : css`rgba(${colors.homeBlueLightRGB}, 0)`
+    ? css`
+        border-bottom-color: rgba(${colors.homeBlue1RGB}, 1);
+      `
+    : css`
+        border-bottom-color: rgba(${colors.homeBlue1RGB}, 0);
+      `
 
 export const StyledHeaderButton = styled.div<StyledHeaderButtonProps>`
   display: grid;
@@ -19,12 +23,38 @@ export const StyledHeaderButton = styled.div<StyledHeaderButtonProps>`
   height: 100%;
   padding: 0 40px;
   cursor: pointer;
-  background-color: ${getHeaderButtonBackgroundColor};
 
-  &:hover {
-    background-color: rgba(${colors.homeBlueLightRGB}, 0.5);
-    transition: background-color 1s ease-in-out;
-  }
+  border-bottom: solid ${colors.homeBlue1} 2px;
+
+  transition: border-bottom-color 1s;
+
+  ${getHeaderButtonBorder}
 `
 
-export const StyledText = styled(Text)``
+export interface StyledHeaderTextProps {
+  isCurrentPage: boolean
+}
+
+const getHeaderTextUnderlineColor = ({isCurrentPage}: StyledHeaderTextProps) =>
+  isCurrentPage ? css`rgba(${colors.homeBlue1RGB}, 0)` : css`rgba(${colors.homeBlue1RGB}, 1)`
+
+export const StyledText = styled(Text)`
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: ${getHeaderTextUnderlineColor};
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`

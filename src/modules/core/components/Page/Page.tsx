@@ -21,7 +21,7 @@ export const Page = (props: PageProps) => {
     className,
     headProps,
     isHeaderEnabled = true,
-    isFooterEnabled = true,
+    isFooterEnabled = false,
     isSidebarEnabled = false,
   } = props
 

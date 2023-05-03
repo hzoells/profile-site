@@ -30,8 +30,6 @@ export const Layout = createGlobalStyle`
     flex: 1 0 auto; // 1.
     display: flex; // 1.
     flex-direction: column; // 1.
-    overflow-y: scroll; // 2.
-    scroll-behavior: smooth; // 3.
   }
 
   #__next, #main, #app {

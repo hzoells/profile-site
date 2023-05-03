@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Page} from 'modules/core/components'
-import {StyledRoot, StyledText} from './Home.styled'
+import {StyledRoot} from './Home.styled'
 
 import {HomePageContext} from './types'
 
@@ -14,9 +14,7 @@ export const Home = (props: HomeProps) => {
 
   return (
     <Page>
-      <StyledRoot className={className}>
-        <StyledText>Home Page</StyledText>
-      </StyledRoot>
+      <StyledRoot className={className} />
     </Page>
   )
 }

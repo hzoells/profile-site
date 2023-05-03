@@ -25,7 +25,9 @@ export const HeaderButton = (props: HeaderButtonProps) => {
 
   return (
     <StyledHeaderButton className={className} isCurrentPage={isCurrentPage} onClick={handleClick}>
-      <StyledText>{name}</StyledText>
+      <StyledText fontWeight={isCurrentPage ? 'bold' : 'normal'} isCurrentPage={isCurrentPage}>
+        {name}
+      </StyledText>
     </StyledHeaderButton>
   )
 }
