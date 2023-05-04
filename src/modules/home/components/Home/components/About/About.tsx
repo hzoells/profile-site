@@ -14,9 +14,7 @@ export const About = (props: AboutProps) => {
   return (
     <StyledRoot className={className}>
       <StyledTitle>
-        <StyledTitleText color={colors.homeBlue1} variant='h3'>
-          ABOUT
-        </StyledTitleText>
+        <StyledTitleText variant='h3'>ABOUT</StyledTitleText>
       </StyledTitle>
 
       <StyledInfo>

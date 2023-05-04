@@ -30,7 +30,7 @@ const getTooltipContainerBackgroundColor = (props: StyledTooltipContainerProps) 
     return colorHex ? colorHex : color
   }
 
-  return colors.white
+  return colors.black
 }
 
 export const StyledTooltipContainer = styled.div<StyledTooltipContainerProps>`
@@ -40,7 +40,7 @@ export const StyledTooltipContainer = styled.div<StyledTooltipContainerProps>`
   padding: 8px 12px;
   max-width: 300px;
   border-radius: ${borders.radius.sm};
-  box-shadow: 0 0 4px rgba(${colors.blackRGB}, 0.05), 0 6px 16px rgba(${colors.blackRGB}, 0.2);
+  box-shadow: 0 0 4px rgba(${colors.whiteRGB}, 0.05), 0 6px 16px rgba(${colors.whiteRGB}, 0.2);
   background-color: ${getTooltipContainerBackgroundColor};
   pointer-events: none;
 `
@@ -120,7 +120,7 @@ const getBubblePointerColor = (props: StyledBubblePointerProps) => {
     return colorHex ? colorHex : color
   }
 
-  return colors.white
+  return colors.black
 }
 
 export const StyledBubblePointer = styled(BubblePointer)<StyledBubblePointerProps>`

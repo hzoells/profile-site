@@ -32,37 +32,30 @@ const getRootVariantStyles = (props: StyledRootProps) => {
 
   return {
     h1: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 48px;
       font-weight: ${text.fontWeight.bold};
     `,
     h2: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 40px;
       font-weight: ${text.fontWeight.bold};
     `,
     h3: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 32px;
       font-weight: ${text.fontWeight.bold};
     `,
     h4: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 24px;
       font-weight: ${text.fontWeight.bold};
     `,
     h5: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 20px;
       font-weight: ${text.fontWeight.bold};
     `,
     h6: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 18px;
       font-weight: ${text.fontWeight.bold};
     `,
     h7: css`
-      font-family: ${text.fontFamily.primary};
       font-size: 16px;
       font-weight: ${text.fontWeight.bold};
     `,

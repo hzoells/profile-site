@@ -19,7 +19,7 @@ export const StyledRoot = styled.div<StyledRootProps>`
     if (!hasImage) {
       return `
         background-color: ${colors.mirage1};
-        color: ${colors.white};
+        color: ${colors.black};
       `
     }
   }}

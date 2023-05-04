@@ -17,9 +17,9 @@ export const StyledRoot = styled.nav`
   width: 100%;
   height: ${HEADER_HEIGHT};
   padding: 0 16px;
-  box-shadow: 0 0 0 1px rgba(${colors.homeBlue4RGB}, 0.1);
+  box-shadow: 0 0 0 1px rgba(${colors.whiteRGB}, 0.1);
   align-items: center;
-  background-color: ${colors.warmWhite7};
+  background-color: ${colors.black};
 `
 
 export const StyledNavigationDrawerButton = styled(NavigationDrawerButton)``

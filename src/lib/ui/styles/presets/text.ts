@@ -1,6 +1,7 @@
 export const text = {
   fontFamily: {
-    primary: "'Helvetica', sans-serif",
+    primary: "'Nunito', sans-serif",
+    secondary: "'Helvetica', sans-serif",
   },
   fontStyle: {
     normal: 'normal',
@@ -11,6 +12,7 @@ export const text = {
     medium: 500,
     semiBold: 600,
     bold: 700,
+    heavy: 800,
   },
   textAlign: {
     center: 'center',

@@ -302,7 +302,6 @@ export const StyledRoot = styled.button<StyledRootProps>`
   align-items: center;
   justify-content: center;
   color: ${getRootColor};
-  font-family: ${text.fontFamily.primary};
   font-size: ${getRootFontSize};
   font-weight: ${getRootFontWeight};
   line-height: 1.5;

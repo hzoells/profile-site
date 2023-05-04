@@ -5,7 +5,7 @@ import {LayoutBlock} from 'modules/common/components'
 
 export const StyledRoot = styled.footer`
   z-index: 1;
-  background-color: ${colors.warmWhite8};
+  background-color: ${colors.white8};
   font-size: 12px;
 `
 

@@ -7,7 +7,7 @@ export const Body = createGlobalStyle`
    * 2. Set base document styles
    */
   body {
-    background-color: ${colors.warmWhite8};
+    background-color: ${colors.black};
     -webkit-tap-highlight-color: transparent; // 1
   }
 

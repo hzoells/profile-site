@@ -1,19 +1,14 @@
 import React from 'react'
 
-import {PAGE_FONTS_PATH} from 'modules/core/constants'
-
 import NextDocument, {Head, Html, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 import {DocumentContext} from 'modules/core/types'
-import {GlobalFonts} from './components'
 
 class _Document extends NextDocument {
   render() {
     return (
       <Html lang='en'>
-        <Head>
-          <GlobalFonts path={PAGE_FONTS_PATH} />
-        </Head>
+        <Head />
 
         <body>
           <Main />

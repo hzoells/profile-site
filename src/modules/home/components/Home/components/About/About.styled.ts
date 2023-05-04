@@ -30,7 +30,7 @@ export const StyledTitle = styled.div`
     bottom: 0;
     height: 10px;
     width: 100%;
-    background-color: ${colors.homeBlue1};
+    background-color: ${colors.white};
     border-radius: 5px;
 
     transform: rotate(-5deg);

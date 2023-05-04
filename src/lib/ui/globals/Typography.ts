@@ -10,7 +10,7 @@ export const Typography = createGlobalStyle`
    * 5. Set base link styles
    */
   body {
-    color: ${colors.black};
+    color: ${colors.white};
     text-rendering: optimizeLegibility; // 1
     -webkit-font-smoothing: antialiased; // 2
     -moz-osx-font-smoothing: grayscale; // 2

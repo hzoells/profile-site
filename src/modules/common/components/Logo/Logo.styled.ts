@@ -53,6 +53,5 @@ const getTextFontSize = ({size}: StyledTextProps) =>
 
 export const StyledText = styled(Text)<StyledTextProps>`
   margin-left: 12px;
-  font-family: ${text.fontFamily.primary};
   font-size: ${getTextFontSize};
 `

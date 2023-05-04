@@ -1,5 +1,7 @@
 import React, {ReactNode, memo} from 'react'
 
+import {Nunito} from 'next/font/google'
+
 import {GlobalStyles} from 'lib/ui/globals'
 import {Footer, Head, Header, NProgress} from './components'
 import {StyledMainContent, StyledRoot} from './Page.styled'
@@ -14,6 +16,8 @@ export interface PageProps {
   isHeaderEnabled?: boolean
   isSidebarEnabled?: boolean
 }
+
+const nunito = Nunito({subsets: ['latin']})
 
 export const Page = (props: PageProps) => {
   const {
@@ -35,7 +39,7 @@ export const Page = (props: PageProps) => {
       {isHeaderEnabled && <Header />}
 
       <StyledRoot
-        className={className}
+        className={`${className} ${nunito.className}`}
         isHeaderEnabled={isHeaderEnabled}
         isSidebarEnabled={isSidebarEnabled}
       >

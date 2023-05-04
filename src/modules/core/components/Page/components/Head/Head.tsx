@@ -49,7 +49,7 @@ export function Head({description, image, title}: HeadProps) {
   const pageTitle = useMemo(() => getPageTitle(title), [title])
   const pageDescription = useMemo(() => getPageDescription(description), [description])
   const pageImage = useMemo(() => getPageImage(image), [image])
-  const pageColor = colors.homeBlue
+  const pageColor = colors.black
 
   return (
     <NextHead>

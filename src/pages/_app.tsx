@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Nunito} from 'next/font/google'
+
 import {DEBOUNCE_DELAY_MS} from 'lib/constants'
 import {IS_BROWSER} from 'modules/core/constants'
 
@@ -12,6 +14,8 @@ import NextApp from 'next/app'
 import {Provider} from 'react-redux'
 
 import {AnyObject} from 'lib/types'
+
+const nunito = Nunito({subsets: ['latin']})
 
 class App extends NextApp {
   constructor(props: AnyObject) {
@@ -42,7 +46,9 @@ class App extends NextApp {
 
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <main className={nunito.className}>
+          <Component {...pageProps} />
+        </main>
       </Provider>
     )
   }

@@ -11,6 +11,6 @@ export default {
     xl: '0 0 2px 2px',
   },
   color: {
-    black: `rgba(${colors.blackRGB}, 0.75)`,
+    black: `rgba(${colors.whiteRGB}, 0.75)`,
   },
 }

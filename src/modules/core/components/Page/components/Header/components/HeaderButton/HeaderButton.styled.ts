@@ -10,10 +10,10 @@ export interface StyledHeaderButtonProps {
 const getHeaderButtonBorder = ({isCurrentPage}: StyledHeaderButtonProps) =>
   isCurrentPage
     ? css`
-        border-bottom-color: rgba(${colors.homeBlue1RGB}, 1);
+        border-bottom-color: rgba(${colors.whiteRGB}, 1);
       `
     : css`
-        border-bottom-color: rgba(${colors.homeBlue1RGB}, 0);
+        border-bottom-color: rgba(${colors.whiteRGB}, 0);
       `
 
 export const StyledHeaderButton = styled.div<StyledHeaderButtonProps>`
@@ -24,7 +24,7 @@ export const StyledHeaderButton = styled.div<StyledHeaderButtonProps>`
   padding: 0 40px;
   cursor: pointer;
 
-  border-bottom: solid ${colors.homeBlue1} 2px;
+  border-bottom: solid ${colors.white} 2px;
 
   transition: border-bottom-color 1s;
 
@@ -36,7 +36,7 @@ export interface StyledHeaderTextProps {
 }
 
 const getHeaderTextUnderlineColor = ({isCurrentPage}: StyledHeaderTextProps) =>
-  isCurrentPage ? css`rgba(${colors.homeBlue1RGB}, 0)` : css`rgba(${colors.homeBlue1RGB}, 1)`
+  isCurrentPage ? css`rgba(${colors.whiteRGB}, 0)` : css`rgba(${colors.whiteRGB}, 1)`
 
 export const StyledText = styled(Text)`
   position: relative;
