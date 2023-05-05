@@ -1,3 +1,4 @@
+export {default as AnimatedInfo} from './AnimatedInfo'
 export {default as BubblePointer} from './BubblePointer'
 export {default as Button} from './Button'
 export {default as Icon} from './Icon'

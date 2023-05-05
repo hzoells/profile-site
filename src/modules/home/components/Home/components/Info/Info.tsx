@@ -3,8 +3,6 @@ import React, {memo, useCallback, useState} from 'react'
 import {PAGE_FILES_PATH} from 'modules/core/constants'
 import {GITHUB_URL, LINKEDIN_URL} from './constants'
 
-import {useIntersectionObserver} from 'modules/common/hooks'
-
 import {Document, Github, LinkedIn} from 'modules/common/icons'
 import {
   StyledIconContainer,
@@ -13,8 +11,6 @@ import {
   StyledRoot,
   StyledText,
   StyledTextItemContainer,
-  StyledTitle,
-  StyledTitleText,
 } from './Info.styled'
 
 export interface InfoProps {
@@ -24,32 +20,9 @@ export interface InfoProps {
 export const Info = (props: InfoProps) => {
   const {className} = props
 
-  const [isIntersecting, setIsIntersecting] = useState(false)
-  const [rootEl, setRootEl] = useState<HTMLElement | null>(null)
-
-  const rootElRef = useCallback((rootEl: HTMLElement | null) => setRootEl(rootEl), [])
-
-  useIntersectionObserver(
-    rootEl,
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true)
-        } else {
-          setIsIntersecting(false)
-        }
-      })
-    },
-    {rootMargin: '-100px'}
-  )
-
   return (
-    <StyledRoot className={className} ref={rootElRef}>
-      <StyledTitle isIntersecting={isIntersecting}>
-        <StyledTitleText variant='h3'>INFO</StyledTitleText>
-      </StyledTitle>
-
-      <StyledInfo isIntersecting={isIntersecting}>
+    <StyledRoot className={className} title='INFO'>
+      <StyledInfo>
         <StyledIconContainer>
           <StyledLink icon={Github} iconSize='xl' linkProps={{href: GITHUB_URL, isNewTab: true}} />
         </StyledIconContainer>
