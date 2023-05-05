@@ -88,6 +88,25 @@ export const StyledInfo = styled.div<StyledIntersectionProps>`
   ${getIntersectionRightStyles}
 
   transition: opacity 3s ease-in-out;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+`
+
+export const StyledIconContainer = styled.div`
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const StyledTextItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: left;
 `
 
 export const StyledText = styled(Text)``

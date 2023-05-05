@@ -1,6 +1,6 @@
 import React, {memo} from 'react'
 
-import {StyledAbout, StyledRoot, StyledSection, StyledText} from './Home.styled'
+import {StyledAbout, StyledInfo, StyledRoot, StyledSection} from './Home.styled'
 
 export interface HomeProps {
   className?: string
@@ -11,8 +11,12 @@ export const Home = (props: HomeProps) => {
 
   return (
     <StyledRoot className={className}>
-      <StyledSection>
+      <StyledSection id='about'>
         <StyledAbout />
+      </StyledSection>
+
+      <StyledSection id='info'>
+        <StyledInfo />
       </StyledSection>
     </StyledRoot>
   )

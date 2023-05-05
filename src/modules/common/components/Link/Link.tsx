@@ -6,7 +6,7 @@ import {StyledRoot, StyledIcon, StyledTextContainer, StyledText} from './Link.st
 
 import {LinkBaseProps} from './components/LinkBase'
 
-export type LinkIconSize = 'xs' | 'sm' | 'md' | 'lg'
+export type LinkIconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export type LinkTextSize = 'sm' | 'md' | 'lg'
 

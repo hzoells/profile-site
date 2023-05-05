@@ -1,3 +1,6 @@
+export {default as Document} from './Document'
+export {default as Github} from './Github'
 export {default as Image} from './Image'
 export {default as Info} from './Info'
+export {default as LinkedIn} from './LinkedIn'
 export {default as Menu} from './Menu'
