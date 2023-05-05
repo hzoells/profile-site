@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components'
 
 import {colors} from 'lib/ui/styles'
 
-import {Text} from 'modules/common/components'
+import {Link, Text} from 'modules/common/components'
 
 export const StyledRoot = styled.div`
   height: 100%;
@@ -13,11 +13,11 @@ export const StyledRoot = styled.div`
   flex-direction: column;
 `
 
-export interface StyledLeftProps {
+export interface StyledIntersectionProps {
   isIntersecting: boolean
 }
 
-const getIntersectionLeftStyles = ({isIntersecting}: StyledLeftProps) => {
+const getIntersectionLeftStyles = ({isIntersecting}: StyledIntersectionProps) => {
   return isIntersecting
     ? css`
         opacity: 1;
@@ -29,7 +29,7 @@ const getIntersectionLeftStyles = ({isIntersecting}: StyledLeftProps) => {
       `
 }
 
-const getIntersectionLeftAfterStyles = ({isIntersecting}: StyledLeftProps) =>
+const getIntersectionLeftAfterStyles = ({isIntersecting}: StyledIntersectionProps) =>
   isIntersecting
     ? css`
         width: 100%;
@@ -40,7 +40,7 @@ const getIntersectionLeftAfterStyles = ({isIntersecting}: StyledLeftProps) =>
         transform: rotate(-90deg);
       `
 
-export const StyledTitle = styled.div<StyledLeftProps>`
+export const StyledTitle = styled.div<StyledIntersectionProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -71,9 +71,25 @@ export const StyledTitle = styled.div<StyledLeftProps>`
 
 export const StyledTitleText = styled(Text)``
 
-export const StyledInfo = styled.div`
+const getIntersectionRightStyles = ({isIntersecting}: StyledIntersectionProps) => {
+  return isIntersecting
+    ? css`
+        opacity: 1;
+      `
+    : css`
+        opacity: 0;
+      `
+}
+
+export const StyledInfo = styled.div<StyledIntersectionProps>`
   width: 50%;
   align-self: end;
+
+  ${getIntersectionRightStyles}
+
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
 `
 
 export const StyledText = styled(Text)``
+
+export const StyledLink = styled(Link)``

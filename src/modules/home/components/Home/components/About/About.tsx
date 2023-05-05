@@ -2,7 +2,14 @@ import React, {memo, useCallback, useState} from 'react'
 
 import {useIntersectionObserver} from '@/modules/common/hooks'
 
-import {StyledInfo, StyledRoot, StyledText, StyledTitle, StyledTitleText} from './About.styled'
+import {
+  StyledInfo,
+  StyledLink,
+  StyledRoot,
+  StyledText,
+  StyledTitle,
+  StyledTitleText,
+} from './About.styled'
 
 export interface AboutProps {
   className?: string
@@ -33,11 +40,20 @@ export const About = (props: AboutProps) => {
   return (
     <StyledRoot className={className} ref={rootElRef}>
       <StyledTitle isIntersecting={isIntersecting}>
-        <StyledTitleText variant='h3'>ABOUT</StyledTitleText>
+        <StyledTitleText variant='h3'>ABOUT ME</StyledTitleText>
       </StyledTitle>
 
-      <StyledInfo>
-        <StyledText>About Hzoells</StyledText>
+      <StyledInfo isIntersecting={isIntersecting}>
+        <StyledText>
+          I am a software developer currently working at{' '}
+          <StyledLink
+            linkProps={{href: 'https://about.inverse.app/', isNewTab: true}}
+            text='Inverse'
+          />{' '}
+          where we are building immersive community experiences for web3. I work across our tech
+          stack as well as building Unity features, smart contract ecosystems, and blockchain
+          integrations. In my free time, I like to cook and play the violin.
+        </StyledText>
       </StyledInfo>
     </StyledRoot>
   )
