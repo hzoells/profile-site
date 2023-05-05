@@ -14,14 +14,6 @@ export const Home = (props: HomeProps) => {
       <StyledSection>
         <StyledAbout />
       </StyledSection>
-
-      <StyledSection>
-        <StyledText>Section 2</StyledText>
-      </StyledSection>
-
-      <StyledSection>
-        <StyledText>Section 3</StyledText>
-      </StyledSection>
     </StyledRoot>
   )
 }

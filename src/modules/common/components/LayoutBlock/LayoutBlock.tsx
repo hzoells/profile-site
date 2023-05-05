@@ -2,7 +2,8 @@ import React, {HTMLAttributes, ReactNode, forwardRef, memo} from 'react'
 
 import {StyledRoot, StyledInnerContainer} from './LayoutBlock.styled'
 
-export interface LayoutBlockProps extends Omit<HTMLAttributes<HTMLDivElement>, 'dangerouslySetInnerHTML'> {
+export interface LayoutBlockProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'dangerouslySetInnerHTML'> {
   children: ReactNode
   className?: string
 }

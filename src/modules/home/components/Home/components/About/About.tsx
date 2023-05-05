@@ -1,6 +1,6 @@
-import React, {memo} from 'react'
+import React, {memo, useCallback, useState} from 'react'
 
-import {colors} from 'lib/ui/styles'
+import {useIntersectionObserver} from '@/modules/common/hooks'
 
 import {StyledInfo, StyledRoot, StyledText, StyledTitle, StyledTitleText} from './About.styled'
 
@@ -11,9 +11,28 @@ export interface AboutProps {
 export const About = (props: AboutProps) => {
   const {className} = props
 
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const [rootEl, setRootEl] = useState<HTMLElement | null>(null)
+
+  const rootElRef = useCallback((rootEl: HTMLElement | null) => setRootEl(rootEl), [])
+
+  useIntersectionObserver(
+    rootEl,
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsIntersecting(true)
+        } else {
+          setIsIntersecting(false)
+        }
+      })
+    },
+    {rootMargin: '-100px'}
+  )
+
   return (
-    <StyledRoot className={className}>
-      <StyledTitle>
+    <StyledRoot className={className} ref={rootElRef}>
+      <StyledTitle isIntersecting={isIntersecting}>
         <StyledTitleText variant='h3'>ABOUT</StyledTitleText>
       </StyledTitle>
 

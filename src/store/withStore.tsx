@@ -17,7 +17,7 @@ const getOrCreateStore = (initialState?: Partial<State>): Store => {
 
   if (!(window as any)[WINDOW_STORE]) {
     // Memoize store
-    (window as any)[WINDOW_STORE] = createStore(initialState)
+    ;(window as any)[WINDOW_STORE] = createStore(initialState)
   }
 
   return (window as any)[WINDOW_STORE]

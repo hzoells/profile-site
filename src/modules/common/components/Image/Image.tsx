@@ -1,17 +1,7 @@
-import React, {
-  ComponentType,
-  SyntheticEvent,
-  memo,
-  useRef,
-} from 'react'
-
+import React, {ComponentType, SyntheticEvent, memo, useRef} from 'react'
 
 import {Image as ImageIcon} from 'modules/common/icons'
-import {
-  StyledHighQualityImage,
-  StyledIcon,
-  StyledRoot,
-} from './Image.styled'
+import {StyledHighQualityImage, StyledIcon, StyledRoot} from './Image.styled'
 
 export interface ImageProps {
   alt: string
@@ -40,16 +30,10 @@ export function Image(props: ImageProps) {
 
   let contentEl
   if (src) {
-      contentEl = (
-        // No image src map, just render high quality image
-        <StyledHighQualityImage
-          alt={alt}
-          isLoaded
-          onError={onError}
-          ref={imageRef}
-          src={src}
-        />
-      )
+    contentEl = (
+      // No image src map, just render high quality image
+      <StyledHighQualityImage alt={alt} isLoaded onError={onError} ref={imageRef} src={src} />
+    )
   } else if (hasPlaceholderIcon || placeholderIcon) {
     contentEl = <StyledIcon as={placeholderIcon || ImageIcon} size={placeholderIconSize} />
   }

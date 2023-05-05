@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import {colors} from 'lib/ui/styles'
 
@@ -13,7 +13,34 @@ export const StyledRoot = styled.div`
   flex-direction: column;
 `
 
-export const StyledTitle = styled.div`
+export interface StyledLeftProps {
+  isIntersecting: boolean
+}
+
+const getIntersectionLeftStyles = ({isIntersecting}: StyledLeftProps) => {
+  return isIntersecting
+    ? css`
+        opacity: 1;
+        transform: translateX(0);
+      `
+    : css`
+        opacity: 0;
+        transform: translateX(-50%);
+      `
+}
+
+const getIntersectionLeftAfterStyles = ({isIntersecting}: StyledLeftProps) =>
+  isIntersecting
+    ? css`
+        width: 100%;
+        transform: rotate(-5deg);
+      `
+    : css`
+        width: 30%;
+        transform: rotate(-90deg);
+      `
+
+export const StyledTitle = styled.div<StyledLeftProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,17 +50,22 @@ export const StyledTitle = styled.div`
 
   margin-bottom: 50px;
 
+  ${getIntersectionLeftStyles}
+
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+
   &::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     height: 10px;
-    width: 100%;
     background-color: ${colors.white};
     border-radius: 5px;
 
-    transform: rotate(-5deg);
+    ${getIntersectionLeftAfterStyles}
+
+    transition: width 1.5s ease-in-out, transform 1.5s ease-in-out;
   }
 `
 

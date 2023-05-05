@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  experimental: {
+    optimizeCss: true,
+  },
+
   webpack: (config, options) => {
     const {isServer} = options
 

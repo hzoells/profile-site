@@ -85,7 +85,8 @@ const getTransformOrigin = (position: TooltipPosition) => {
 
 export type TooltipPosition = 'bottom' | 'left' | 'right' | 'top'
 
-export interface TooltipProps extends Omit<HTMLAttributes<HTMLElement>, 'content' | 'dangerouslySetInnerHTML'> {
+export interface TooltipProps
+  extends Omit<HTMLAttributes<HTMLElement>, 'content' | 'dangerouslySetInnerHTML'> {
   children: ReactNode
   className?: string
   color?: string

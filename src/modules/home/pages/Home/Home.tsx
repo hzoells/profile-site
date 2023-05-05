@@ -19,8 +19,4 @@ export const Home = (props: HomeProps) => {
   )
 }
 
-Home.getInitialProps = async (_context: HomePageContext) => {
-  return {}
-}
-
 export default Home
