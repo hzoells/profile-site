@@ -6,6 +6,7 @@ import {ScrollIndicator} from './components'
 
 export const StyledRoot = styled.div`
   scroll-snap-type: y mandatory;
+  scroll-snap-align: start end;
   overflow-y: scroll;
 
   height: calc(100vh - ${HEADER_HEIGHT});
@@ -14,5 +15,5 @@ export const StyledRoot = styled.div`
 export const StyledScrollIndicator = styled(ScrollIndicator)`
   position: absolute;
   left: 20px;
-  top: 500px;
+  top: 50%;
 `

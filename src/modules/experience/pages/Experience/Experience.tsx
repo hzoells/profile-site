@@ -1,13 +1,13 @@
 import React from 'react'
 
 import {Page} from 'modules/core/components'
-import {StyledRoot} from './Home.styled'
+import {StyledRoot} from './Experience.styled'
 
-export interface HomeProps {
+export interface ExperienceProps {
   className?: string
 }
 
-export const Home = (props: HomeProps) => {
+export const Experience = (props: ExperienceProps) => {
   const {className} = props
 
   return (
@@ -17,4 +17,4 @@ export const Home = (props: HomeProps) => {
   )
 }
 
-export default Home
+export default Experience

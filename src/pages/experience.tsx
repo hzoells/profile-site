@@ -1,3 +1,3 @@
-import {Home} from 'modules/home/pages'
+import {Experience} from 'modules/experience/pages'
 
-export default Home
+export default Experience

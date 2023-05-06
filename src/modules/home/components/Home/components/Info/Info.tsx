@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useState} from 'react'
+import React, {memo} from 'react'
 
 import {PAGE_FILES_PATH} from 'modules/core/constants'
 import {GITHUB_URL, LINKEDIN_URL} from './constants'
