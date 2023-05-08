@@ -1,5 +1,12 @@
 import React, {memo} from 'react'
-import {StyledInverse, StyledRoot, StyledSection} from './Experience.styled'
+import {
+  StyledEducation,
+  StyledInternships,
+  StyledInverse,
+  StyledRoot,
+  StyledSection,
+  StyledTreehouse,
+} from './Experience.styled'
 
 export interface ExperienceProps {
   className?: string
@@ -12,6 +19,18 @@ export const Experience = (props: ExperienceProps) => {
     <StyledRoot className={className}>
       <StyledSection id='inverse'>
         <StyledInverse />
+      </StyledSection>
+
+      <StyledSection id='treehouse'>
+        <StyledTreehouse />
+      </StyledSection>
+
+      <StyledSection id='internships'>
+        <StyledInternships />
+      </StyledSection>
+
+      <StyledSection id='education'>
+        <StyledEducation />
       </StyledSection>
     </StyledRoot>
   )

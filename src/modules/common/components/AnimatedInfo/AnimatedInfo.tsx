@@ -22,6 +22,7 @@ export const AnimatedInfo = (props: AnimatedInfoProps) => {
     rootEl,
     entries => {
       entries.forEach(entry => {
+        console.log(entry)
         if (entry.isIntersecting) {
           setIsIntersecting(true)
         } else {
@@ -29,7 +30,7 @@ export const AnimatedInfo = (props: AnimatedInfoProps) => {
         }
       })
     },
-    {rootMargin: '-100px'}
+    {}
   )
 
   return (
