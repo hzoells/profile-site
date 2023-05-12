@@ -3,9 +3,9 @@ import styled, {css} from 'styled-components'
 import {colors} from 'lib/ui/styles'
 
 export const StyledRoot = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
 `
 
 export const StyledDot = styled.div`
@@ -13,12 +13,14 @@ export const StyledDot = styled.div`
 
   opacity: 0.2;
 
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 
   border-radius: 50%;
 
   cursor: pointer;
+
+  margin-right: 5px;
 `
 
 export interface StyledSelectedIndicatorProps {
@@ -27,7 +29,7 @@ export interface StyledSelectedIndicatorProps {
 
 const getSelectedIndicatorTranslation = ({selectedItem}: StyledSelectedIndicatorProps) =>
   css`
-    transform: translateY(${selectedItem * 20}px);
+    transform: translateX(${selectedItem * 15}px);
   `
 
 export const StyledSelectedIndicator = styled.div<StyledSelectedIndicatorProps>`
@@ -35,13 +37,13 @@ export const StyledSelectedIndicator = styled.div<StyledSelectedIndicatorProps>`
 
   opacity: 1;
 
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 
   border-radius: 50%;
 
   position: absolute;
-  top 0;
+  left 0;
 
   ${getSelectedIndicatorTranslation}
 

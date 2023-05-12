@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import {colors} from 'lib/ui/styles'
 
-import {AnimatedInfo, Link, Text} from 'modules/common/components'
+import {AnimatedInfo, ImageSlideshow, Link, Text} from 'modules/common/components'
 
 export const StyledRoot = styled(AnimatedInfo)``
 
@@ -29,3 +29,5 @@ export const StyledItemContentContainer = styled.div`
 export const StyledText = styled(Text)``
 
 export const StyledLink = styled(Link)``
+
+export const StyledImageSlideshow = styled(ImageSlideshow)``
