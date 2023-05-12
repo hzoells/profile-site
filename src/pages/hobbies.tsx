@@ -1,3 +1,3 @@
-import {Home} from 'modules/home/pages'
+import {Hobbies} from 'modules/hobbies/pages'
 
-export default Home
+export default Hobbies
