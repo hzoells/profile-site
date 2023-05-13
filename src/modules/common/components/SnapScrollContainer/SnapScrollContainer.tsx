@@ -1,7 +1,6 @@
 import React, {
   Children,
   ReactNode,
-  UIEvent,
   memo,
   useCallback,
   useEffect,
@@ -9,6 +8,9 @@ import React, {
   useRef,
   useState,
 } from 'react'
+
+import {useSelector} from 'modules/common/hooks'
+import {coreSelectors} from '@/modules/core/redux'
 
 import {StyledRoot, StyledScrollIndicator} from './SnapScrollContainer.styled'
 
@@ -19,6 +21,8 @@ export interface SnapScrollContainerProps {
 
 export const SnapScrollContainer = (props: SnapScrollContainerProps) => {
   const {children, className} = props
+
+  const isMobile = useSelector(coreSelectors.getIsMobile)
 
   const numChildren = useMemo(() => Children.toArray(children).length, [children])
 
@@ -62,6 +66,7 @@ export const SnapScrollContainer = (props: SnapScrollContainerProps) => {
       {numChildren > 1 && (
         <StyledScrollIndicator
           childCount={numChildren}
+          isMobile={isMobile}
           scrollToChild={scrollToChild}
           selectedChild={selectedChild}
         />

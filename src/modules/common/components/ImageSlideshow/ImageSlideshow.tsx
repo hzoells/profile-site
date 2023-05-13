@@ -1,5 +1,8 @@
 import React, {memo, useCallback, useState} from 'react'
 
+import {useSelector} from 'modules/common/hooks'
+import {coreSelectors} from '@/modules/core/redux'
+
 import {
   StyledBackButton,
   StyledChevronLeft,
@@ -25,6 +28,8 @@ export interface ImageSlideshowProps {
 
 export const ImageSlideshow = (props: ImageSlideshowProps) => {
   const {className, slides} = props
+
+  const isMobile = useSelector(coreSelectors.getIsMobile)
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
 
@@ -56,12 +61,17 @@ export const ImageSlideshow = (props: ImageSlideshowProps) => {
           </StyledSlide>
         ))}
 
-        <StyledBackButton isDisabled={currentSlideIndex === 0} onClick={handleBackClick}>
+        <StyledBackButton
+          isDisabled={currentSlideIndex === 0}
+          isMobile={isMobile}
+          onClick={handleBackClick}
+        >
           <StyledChevronLeft />
         </StyledBackButton>
 
         <StyledForwardButton
           isDisabled={currentSlideIndex === slides.length - 1}
+          isMobile={isMobile}
           onClick={handleForwardClick}
         >
           <StyledChevronRight />

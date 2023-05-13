@@ -1,8 +1,12 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import {HEADER_HEIGHT} from 'modules/core/constants'
 
 import {ScrollIndicator} from './components'
+
+interface MobileProps {
+  isMobile: boolean
+}
 
 export const StyledRoot = styled.div`
   scroll-snap-type: y mandatory;
@@ -12,8 +16,19 @@ export const StyledRoot = styled.div`
   height: calc(100vh - ${HEADER_HEIGHT});
 `
 
-export const StyledScrollIndicator = styled(ScrollIndicator)`
+export interface StyledScrollIndicatorProps extends MobileProps {}
+
+const getScrollIndicatorMobileProps = ({isMobile}: StyledScrollIndicatorProps) =>
+  isMobile
+    ? css`
+        left: 5px;
+      `
+    : css`
+        left: 20px;
+      `
+
+export const StyledScrollIndicator = styled(ScrollIndicator)<StyledScrollIndicatorProps>`
   position: absolute;
-  left: 20px;
+  ${getScrollIndicatorMobileProps}
   top: 50%;
 `

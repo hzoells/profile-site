@@ -1,10 +1,12 @@
 import styled, {css} from 'styled-components'
 
-import {colors} from 'lib/ui/styles'
-
 import Image from 'modules/common/components/Image'
 import {ChevronLeft, ChevronRight} from 'modules/common/icons'
 import {SlideIndicator} from './components'
+
+interface MobileProps {
+  isMobile: boolean
+}
 
 export const StyledRoot = styled.div`
   position: relative;
@@ -69,7 +71,7 @@ export const StyledImage = styled(Image)`
   height: 100%;
 `
 
-export interface SlideNavButtonProps {
+export interface SlideNavButtonProps extends MobileProps {
   isDisabled?: boolean
 }
 
@@ -80,6 +82,15 @@ const getDisabledProps = ({isDisabled}: SlideNavButtonProps) =>
       `
     : css`
         display: flex;
+      `
+
+const getSlideNavMobileProps = ({isMobile}: MobileProps) =>
+  isMobile
+    ? css`
+        opacity: 1;
+      `
+    : css`
+        opacity: 0;
       `
 
 export const StyledBackButton = styled.div<SlideNavButtonProps>`
@@ -93,7 +104,7 @@ export const StyledBackButton = styled.div<SlideNavButtonProps>`
   align-items: center;
   justify-content: flex-start;
 
-  opacity: 0;
+  ${getSlideNavMobileProps}
   transition: opacity 1s;
 
   &:hover {
@@ -115,7 +126,7 @@ export const StyledForwardButton = styled.div<SlideNavButtonProps>`
   align-items: center;
   justify-content: flex-end;
 
-  opacity: 0;
+  ${getSlideNavMobileProps}
   transition: opacity 1s;
 
   &:hover {

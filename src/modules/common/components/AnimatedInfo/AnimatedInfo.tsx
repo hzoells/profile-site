@@ -1,5 +1,8 @@
 import React, {memo, useCallback, useState, ReactNode} from 'react'
 
+import {useSelector} from 'modules/common/hooks'
+import {coreSelectors} from '@/modules/core/redux'
+
 import {useIntersectionObserver} from '@/modules/common/hooks'
 
 import {StyledInfo, StyledRoot, StyledTitle, StyledTitleText} from './AnimatedInfo.styled'
@@ -13,6 +16,8 @@ export interface AnimatedInfoProps {
 export const AnimatedInfo = (props: AnimatedInfoProps) => {
   const {children, className, title} = props
 
+  const isMobile = useSelector(coreSelectors.getIsMobile)
+
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [rootEl, setRootEl] = useState<HTMLElement | null>(null)
 
@@ -22,7 +27,6 @@ export const AnimatedInfo = (props: AnimatedInfoProps) => {
     rootEl,
     entries => {
       entries.forEach(entry => {
-        console.log(entry)
         if (entry.isIntersecting) {
           setIsIntersecting(true)
         } else {
@@ -30,16 +34,18 @@ export const AnimatedInfo = (props: AnimatedInfoProps) => {
         }
       })
     },
-    {}
+    {threshold: 0.1}
   )
 
   return (
-    <StyledRoot className={className} ref={rootElRef}>
-      <StyledTitle isIntersecting={isIntersecting}>
+    <StyledRoot className={className} isMobile={isMobile} ref={rootElRef}>
+      <StyledTitle isIntersecting={isIntersecting} isMobile={isMobile}>
         <StyledTitleText variant='h3'>{title}</StyledTitleText>
       </StyledTitle>
 
-      <StyledInfo isIntersecting={isIntersecting}>{children}</StyledInfo>
+      <StyledInfo isIntersecting={isIntersecting} isMobile={isMobile}>
+        {children}
+      </StyledInfo>
     </StyledRoot>
   )
 }

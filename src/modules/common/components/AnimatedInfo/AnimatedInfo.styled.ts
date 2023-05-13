@@ -4,10 +4,25 @@ import {colors} from 'lib/ui/styles'
 
 import Text from 'modules/common/components/Text'
 
-export const StyledRoot = styled.div`
+export interface MobileProps {
+  isMobile: boolean
+}
+
+export interface StyledRootProps extends MobileProps {}
+
+const getRootMobileProps = ({isMobile}: MobileProps) =>
+  isMobile
+    ? css`
+        padding: 20px 20px 20px 25px;
+      `
+    : css`
+        padding: 100px;
+      `
+
+export const StyledRoot = styled.div<StyledRootProps>`
   height: 100%;
   width: 100%;
-  padding: 100px;
+  ${getRootMobileProps}
 
   display: flex;
   flex-direction: column;
@@ -40,13 +55,25 @@ const getIntersectionLeftAfterStyles = ({isIntersecting}: StyledIntersectionProp
         transform: rotate(-90deg);
       `
 
-export const StyledTitle = styled.div<StyledIntersectionProps>`
+const getTitleMobileProps = ({isMobile}: MobileProps) =>
+  isMobile
+    ? css`
+        width: 100%;
+        padding: 50px 0 50px 0;
+      `
+    : css`
+        width: 50%;
+        padding: 50px 0 50px 75px;
+      `
+
+export interface StyledTitleProps extends StyledIntersectionProps, MobileProps {}
+
+export const StyledTitle = styled.div<StyledTitleProps>`
   position: relative;
   display: flex;
   flex-direction: column;
 
-  width: 50%;
-  padding: 50px 0 50px 75px;
+  ${getTitleMobileProps}
 
   margin-bottom: 50px;
 
@@ -81,11 +108,25 @@ const getIntersectionRightStyles = ({isIntersecting}: StyledIntersectionProps) =
       `
 }
 
-export const StyledInfo = styled.div<StyledIntersectionProps>`
-  width: 50%;
-  align-self: end;
+const getInfoMobileProps = ({isMobile}: MobileProps) =>
+  isMobile
+    ? css`
+        width: 100%;
+        align-self: start;
+      `
+    : css`
+        width: 50%;
+        align-self: end;
+      `
+
+export interface StyledInfoProps extends StyledIntersectionProps, MobileProps {}
+
+export const StyledInfo = styled.div<StyledInfoProps>`
+  ${getInfoMobileProps}
 
   ${getIntersectionRightStyles}
 
   transition: opacity 3s ease-in-out;
+
+  padding-bottom: 40px;
 `
