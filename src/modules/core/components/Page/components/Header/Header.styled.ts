@@ -1,10 +1,10 @@
 import {HEADER_HEIGHT} from 'modules/core/constants'
 
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {colors, zIndex} from 'lib/ui/styles'
 
 import {Logo, NavigationDrawerButton, Text} from 'modules/common/components'
-import {HeaderButton} from './components'
+import {HeaderButton, MobileHeaderButton} from './components'
 
 export const StyledRoot = styled.nav`
   z-index: ${zIndex.header};
@@ -46,4 +46,32 @@ export const StyledHeaderButtonsContainer = styled.div<StyledHeaderButtonsContai
 
 export const StyledHeaderButton = styled(HeaderButton)``
 
+export interface MobileHeaderButtonContainerProps {
+  isOpen: boolean
+}
+
+const getMobileHeaderButtonsProps = ({isOpen}: MobileHeaderButtonContainerProps) =>
+  isOpen
+    ? css`
+        display: flex;
+      `
+    : css`
+        display: none;
+      `
+
+export const StyledMobileHeaderButtonContainer = styled.div<MobileHeaderButtonContainerProps>`
+  position: absolute;
+  top: ${HEADER_HEIGHT};
+  left: 0;
+  width: 100%;
+  height: calc(100vh - ${HEADER_HEIGHT});
+
+  ${getMobileHeaderButtonsProps}
+  flex-direction: column;
+
+  background-color: ${colors.black};
+`
+
 export const StyledText = styled(Text)``
+
+export const StyledMobileHeaderButton = styled(MobileHeaderButton)``

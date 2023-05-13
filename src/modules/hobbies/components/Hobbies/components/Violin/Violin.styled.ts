@@ -1,8 +1,12 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import {colors} from 'lib/ui/styles'
 
 import {AnimatedInfo, Link, Text} from 'modules/common/components'
+
+interface MobileProps {
+  isMobile: boolean
+}
 
 export const StyledRoot = styled(AnimatedInfo)``
 
@@ -30,11 +34,22 @@ export const StyledText = styled(Text)``
 
 export const StyledLink = styled(Link)``
 
-export const StyledIframe = styled.iframe`
-  width: 500px;
+export interface StyledIframeProps extends MobileProps {}
+
+const getMobileIframeStyles = ({isMobile}: StyledIframeProps) =>
+  isMobile
+    ? css`
+        width: 280px;
+      `
+    : css`
+        width: 500px;
+      `
+
+export const StyledIframe = styled.iframe<StyledIframeProps>`
+  ${getMobileIframeStyles}
   height: 300px;
   margin: 20px;
-  padding: 2px;
+  padding: 4px;
 
   align-self: center;
   box-shadow: 0 0 2px rgba(${colors.homeBlueRGB}, 1);
